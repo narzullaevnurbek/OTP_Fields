@@ -150,7 +150,15 @@ class ViewController: UIViewController {
         return x
     }
 ```
-
+3. When code resend waiting timer is over, we can resend the OTP with this function
+```swift
+@objc
+    func resendOTP() {
+        self.resendButton.setTitleColor(.black, for: .normal)
+        self.resendButton.setTitle("If you have not received the code, we can resend it in 00:20 sec.", for: .normal)
+        self.startCountDown(second: 20)
+    }
+```
 ## In the last step we check the user input and delete actions
 ```swift
 extension ViewController: UITextFieldDelegate {
