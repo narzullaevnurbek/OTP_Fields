@@ -212,3 +212,4 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 ```
+### The key of solution is to create one hidden text field and make users to enter OTP code into it. Then, make the entered digits appear in 4 mini text fields by setting the hidden text field's "delegate" to "self" and using "shouldChangeCharactersIn" function of text field delegate.
