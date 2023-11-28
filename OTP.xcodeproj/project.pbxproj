@@ -14,6 +14,7 @@
 		8ADBFC652B15F13B00AE9EC9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBFC642B15F13B00AE9EC9 /* CustomTextField.swift */; };
 		8ADBFC672B15F1B200AE9EC9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBFC662B15F1B200AE9EC9 /* Extensions.swift */; };
 		8ADBFC6B2B15F4FE00AE9EC9 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADBFC6A2B15F4FE00AE9EC9 /* Helpers.swift */; };
+		8ADBFC6D2B16093000AE9EC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8ADBFC6C2B16093000AE9EC9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8ADBFC642B15F13B00AE9EC9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		8ADBFC662B15F1B200AE9EC9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8ADBFC6A2B15F4FE00AE9EC9 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		8ADBFC6C2B16093000AE9EC9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				8ADBFC6A2B15F4FE00AE9EC9 /* Helpers.swift */,
 				8ADBFC592B15F01300AE9EC9 /* Assets.xcassets */,
 				8ADBFC5E2B15F01300AE9EC9 /* Info.plist */,
+				8ADBFC6C2B16093000AE9EC9 /* README.md */,
 			);
 			path = OTP;
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ADBFC6D2B16093000AE9EC9 /* README.md in Resources */,
 				8ADBFC5A2B15F01300AE9EC9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
