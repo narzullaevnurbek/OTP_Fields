@@ -99,57 +99,57 @@ class ViewController: UIViewController {
 ## Secondly we handle inputs and clicks
 1. This function checks the user entered OTP code and responses accordingly with alerts.
 ```swift
-    @objc
-    func checkOTP() {
-        if let otpText = self.hiddenTextField.text {
-            if otpText.count == 4 {
-                if otpText == otpCode {
-                    let alert = UIAlertController(title: "Success", message: "You have been successfully verified!", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(
-                        title: "OK",
-                        style: .default))
-                    present(alert, animated: true)
-                } else {
-                    let alert = UIAlertController(title: "Incorrect digits", message: "You have entered incorrect digit codes, review the e-mail and try again", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(
-                        title: "OK",
-                        style: .default))
-                    present(alert, animated: true)
-                }
-                
+@objc
+func checkOTP() {
+    if let otpText = self.hiddenTextField.text {
+        if otpText.count == 4 {
+            if otpText == otpCode {
+                let alert = UIAlertController(title: "Success", message: "You have been successfully verified!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .default))
+                present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Incorrect digits", message: "You have entered incorrect digit codes, review the e-mail and try again", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(
+                    title: "OK",
+                    style: .default))
+                present(alert, animated: true)
             }
+            
         }
     }
+}
 ```
 2. To run down the waiting counter, we use function with Timer() used in it
 ```swift
-    func startCountDown(second: Int) {
-        var timerSeconds = second
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            timerSeconds = self.discounter(timerSeconds)
-            let s = timerSeconds % 60
-            let m = timerSeconds / 60
-            
-            if s < 10 {
-                self.resendButton.setTitle("If you have not received the code, we can resend it in 0\(m):0\(s) sec.", for: .normal)
-            } else {
-                self.resendButton.setTitle("If you have not received the code, we can resend it in 0\(m):\(s) sec.", for: .normal)
-            }
-            
-            if m == 0 && s == 0 {
-                timer.invalidate()
-                self.resendButton.setTitleColor(.systemBlue, for: .normal)
-                self.resendButton.setTitle("Send the code again", for: .normal)
-                self.resendButton.isUserInteractionEnabled = true
-            }
+func startCountDown(second: Int) {
+    var timerSeconds = second
+    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+        timerSeconds = self.discounter(timerSeconds)
+        let s = timerSeconds % 60
+        let m = timerSeconds / 60
+        
+        if s < 10 {
+            self.resendButton.setTitle("If you have not received the code, we can resend it in 0\(m):0\(s) sec.", for: .normal)
+        } else {
+            self.resendButton.setTitle("If you have not received the code, we can resend it in 0\(m):\(s) sec.", for: .normal)
+        }
+        
+        if m == 0 && s == 0 {
+            timer.invalidate()
+            self.resendButton.setTitleColor(.systemBlue, for: .normal)
+            self.resendButton.setTitle("Send the code again", for: .normal)
+            self.resendButton.isUserInteractionEnabled = true
         }
     }
+}
 
-    func discounter(_ n: Int) -> Int {
-        var x = n
-        x -= 1
-        return x
-    }
+func discounter(_ n: Int) -> Int {
+    var x = n
+    x -= 1
+    return x
+}
 ```
 3. When code resend waiting timer is over, we can resend the OTP with this function
 ```swift
