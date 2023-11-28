@@ -99,7 +99,8 @@ class ViewController: UIViewController {
 ## Secondly we handle inputs and clicks
 1. This function checks the user entered OTP code and responses accordingly with alerts.
 ```swift
-    @objc func checkOTP() {
+    @objc
+    func checkOTP() {
         if let otpText = self.hiddenTextField.text {
             if otpText.count == 4 {
                 if otpText == otpCode {
@@ -153,11 +154,11 @@ class ViewController: UIViewController {
 3. When code resend waiting timer is over, we can resend the OTP with this function
 ```swift
 @objc
-    func resendOTP() {
-        self.resendButton.setTitleColor(.black, for: .normal)
-        self.resendButton.setTitle("If you have not received the code, we can resend it in 00:20 sec.", for: .normal)
-        self.startCountDown(second: 20)
-    }
+func resendOTP() {
+    self.resendButton.setTitleColor(.black, for: .normal)
+    self.resendButton.setTitle("If you have not received the code, we can resend it in 00:20 sec.", for: .normal)
+    self.startCountDown(second: 20)
+}
 ```
 ## In the last step we check the user input and delete actions
 ```swift
